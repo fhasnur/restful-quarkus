@@ -16,14 +16,20 @@ public class Item extends PanacheEntityBase {
     @Column(name = "id", nullable = false)
     public Long id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     public String name;
 
-    @Column(name = "count")
-    public String count;
+    @Column(name = "count", nullable = false)
+    public Integer count;
 
-    @Column(name = "price")
-    public String price;
+    @Column(name = "price", nullable = false)
+    public Integer price;
+
+    @Column(name = "type", nullable = false)
+    public String type;
+
+    @Column(name = "description")
+    public String description;
 
     @CreationTimestamp
     @Column(name = "created_at")
