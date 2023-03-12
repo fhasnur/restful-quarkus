@@ -16,7 +16,7 @@ public class ItemService {
         return Response.status(Response.Status.OK).entity(Item.findAll().list()).build();
     }
 
-    public Response getById(@PathParam("id") Long id){
+    public Response get(@PathParam("id") Long id){
         Item item = Item.findById(id);
         if(item == null){
             return Response.status(Response.Status.NOT_FOUND).build();

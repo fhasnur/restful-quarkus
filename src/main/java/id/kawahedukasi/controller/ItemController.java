@@ -1,6 +1,8 @@
 package id.kawahedukasi.controller;
 
+import id.kawahedukasi.service.ExportService;
 import id.kawahedukasi.service.ItemService;
+import net.sf.jasperreports.engine.JRException;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -15,6 +17,9 @@ public class ItemController {
     @Inject
     ItemService itemService;
 
+    @Inject
+    ExportService exportService;
+
     @GET
     public Response get() {
         return itemService.get();
@@ -22,8 +27,15 @@ public class ItemController {
 
     @GET
     @Path("/{id}")
-    public Response getById(@PathParam("id") Long id){
-        return itemService.getById(id);
+    public Response get(@PathParam("id") Long id){
+        return itemService.get(id);
+    }
+
+    @GET
+    @Path("/export")
+    @Produces("application/pdf")
+    public Response export() throws JRException {
+        return exportService.exportItem();
     }
 
     @POST
