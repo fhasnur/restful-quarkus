@@ -142,7 +142,7 @@
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[price]]></text>
+				<text><![CDATA[count]]></text>
 			</staticText>
 			<staticText>
 				<reportElement style="Column header" positionType="Float" x="158" y="0" width="90" height="20" forecolor="#000000" uuid="1765b038-a366-4717-bc1a-3a042bf10585">
@@ -218,7 +218,7 @@
 				<textElement>
 					<font fontName="Arial" size="11" isBold="false"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{count}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement style="Detail" positionType="Float" x="158" y="0" width="90" height="20" uuid="957ac209-94cc-4523-9b8d-1a3c947fee30">
