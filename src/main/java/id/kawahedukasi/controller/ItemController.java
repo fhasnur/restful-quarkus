@@ -39,10 +39,17 @@ public class ItemController {
     }
 
     @GET
-    @Path("/export")
+    @Path("/export/pdf")
     @Produces("application/pdf")
-    public Response export() throws JRException {
-        return exportService.exportItem();
+    public Response exportPdf() throws JRException {
+        return exportService.exportPdf();
+    }
+
+    @GET
+    @Path("/export/excel")
+    @Produces("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+    public Response exportExcel() throws IOException {
+        return exportService.exportExcel();
     }
 
     @POST
